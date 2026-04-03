@@ -1,0 +1,104 @@
+.stats-container {
+  padding: 24px 20px 100px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.stats-header {
+  margin-bottom: 32px;
+}
+
+.level-card {
+  padding: 24px;
+  margin-bottom: 24px;
+  background: rgba(20, 20, 22, 0.8);
+  border: 1px solid rgba(255, 159, 10, 0.1);
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 159, 10, 0.2);
+  color: var(--accent-orange);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.level-info h2 {
+  font-size: 24px;
+  color: white;
+}
+
+.xp-counter {
+  text-align: right;
+}
+
+.current-xp {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.total-xp {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.progress-bar-bg {
+  height: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--brand-gradient);
+  border-radius: 4px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-box {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon {
+  margin-bottom: 12px;
+}
+
+.stat-box h3 {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.stat-box p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    padding: 40px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

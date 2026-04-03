@@ -1,0 +1,126 @@
+.calendar-container {
+  padding: 24px 20px 100px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.calendar-header {
+  margin-bottom: 24px;
+}
+
+.calendar-wrapper {
+  padding: 16px;
+}
+
+.calendar-wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 0 16px;
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 16px;
+}
+
+.calendar-wrapper .icon {
+  cursor: pointer;
+  padding: 4px 12px;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.calendar-wrapper .icon:hover {
+  color: var(--accent-orange);
+}
+
+.calendar-wrapper .days {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.week-name {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.calendar-wrapper .row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.calendar-wrapper .cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  position: relative;
+}
+
+.calendar-wrapper .number {
+  font-size: 12px;
+  margin-bottom: 4px;
+  z-index: 2;
+}
+
+.calendar-wrapper .disabled .number {
+  color: var(--text-tertiary);
+  opacity: 0.3;
+}
+
+.calendar-wrapper .today .number {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+/* Heatmap Dot */
+.heatmap-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: var(--panel-bg-border);
+  transition: all 0.2s ease;
+}
+
+.heatmap-dot.level-0 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.heatmap-dot.level-1 {
+  background-color: rgba(255, 159, 10, 0.3); /* Orange slight */
+}
+
+.heatmap-dot.level-2 {
+  background-color: rgba(255, 159, 10, 0.6); /* Orange medium */
+}
+
+.heatmap-dot.level-3 {
+  background-color: rgba(255, 59, 48, 0.9); /* Red high intensity */
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.4);
+}
+
+.intensity-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.intensity-legend .heatmap-dot {
+  width: 14px;
+  height: 14px;
+}
+
+@media (min-width: 768px) {
+  .calendar-container {
+    padding: 40px;
+  }
+}

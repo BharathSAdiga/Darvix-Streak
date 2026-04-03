@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --app-bg: #000000;
+  --panel-bg: #141416;
+  --panel-bg-border: #2c2c30;
+  --text-primary: #ffffff;
+  --text-secondary: #B3B3B3;
+  --text-tertiary: #5c5c63;
+  
+  --accent-red: #ff3b30;
+  --accent-orange: #ff9f0a;
+  --accent-green: #30d158;
+  --accent-blue: #0a84ff;
+  
+  --glass-bg: rgba(20, 20, 22, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --brand-gradient: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+  
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: dark;
+  color: var(--text-primary);
+  background-color: var(--app-bg);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #030303; 
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 59, 48, 0.05) 0%, transparent 50%),
+                    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-position: top center, center center, center center;
+}
+
+/* App Container for the full web view */
+#root {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive App Interface Wrapper */
+.responsive-app-layout {
+  width: 100%;
+  max-width: 1400px;
+  background-color: var(--app-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0,0,0,0.9), 0 0 20px rgba(255, 159, 10, 0.03);
+  display: flex;
+  flex-direction: column; /* Mobile first */
+}
+
+.app-content-area {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  padding-bottom: 90px; /* space for mobile bottom nav */
+}
+
+@media (min-width: 768px) {
+  .responsive-app-layout {
+    flex-direction: row;
+    margin: 40px auto;
+    min-height: calc(100vh - 80px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .app-content-area {
+    padding-bottom: 0;
+  }
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.02); /* Barely visible line */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+}
+
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Hide scrollbar for clean mobile look */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
